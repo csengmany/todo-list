@@ -19,6 +19,7 @@ const Task = ({ taskList, setTaskList }) => {
                                 //if box is checked: the task is done = strike
                                 const newTaskList = [...taskList];
                                 newTaskList[index].isChecked = false;
+                                console.log(newTaskList);
                                 setTaskList(newTaskList);
                             } else {
                                 //if box is not checked: the task is not done = not strike
