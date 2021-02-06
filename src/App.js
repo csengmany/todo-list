@@ -16,13 +16,14 @@ library.add(faListAlt, faTrash);
 function App() {
     const [task, setTask] = useState("");
     const [taskList, setTaskList] = useState([]);
+    const [taskSearch, setTaskSearch] = useState([]);
 
     return (
         <div className="App">
             <Header logo="list-alt" title="Todo List" />
 
             <div className="container">
-                <SearchTask taskList={taskList} />
+                <SearchTask taskList={taskList} setTaskList={setTaskList} />
                 <Task taskList={taskList} setTaskList={setTaskList} />
 
                 <CrudTask

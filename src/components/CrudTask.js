@@ -1,6 +1,6 @@
 const CrudTask = ({ task, setTask, taskList, setTaskList }) => {
     return (
-        <div>
+        <div className="crud">
             {/* button check all */}
             {taskList.length > 0 && (
                 <button
