@@ -41,15 +41,17 @@
 }
 
 /* =================
-    TASK
+       TASK
 ==================== */
 .container {
     margin: 30px auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.input-text {
+.input-text,
+.search-bar {
     border: 1px solid var(--primary);
     height: 65px;
     width: 548px;
@@ -58,9 +60,13 @@
     outline: none;
     padding-left: 25px;
 
-    margin: 20px 57px 20px 0px;
+    margin: 20px 57px;
 }
-button {
+.search-bar {
+    margin-bottom: 35px;
+}
+button,
+.button {
     height: 65px;
     width: 130px;
     font-size: 22px;
@@ -102,7 +108,7 @@ button:hover {
     cursor: pointer;
 }
 /* =================
-      FOOTER
+     FOOTER
 ==================== */
 .footer {
     display: flex;

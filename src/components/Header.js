@@ -1,3 +1,4 @@
+// Import FontAwesomeIcon to use icons in this component
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = ({ title, logo }) => {
