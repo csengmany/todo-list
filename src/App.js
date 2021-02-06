@@ -16,7 +16,6 @@ library.add(faListAlt, faTrash);
 function App() {
     const [task, setTask] = useState("");
     const [taskList, setTaskList] = useState([]);
-    const [taskSearch, setTaskSearch] = useState([]);
 
     return (
         <div className="App">

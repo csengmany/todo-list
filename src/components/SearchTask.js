@@ -7,7 +7,7 @@ const SearchTask = ({ taskList, setTaskList }) => {
                     type="text"
                     placeholder="search task"
                     onChange={(event) => {
-                        let value = event.target.value;
+                        return event.target.value;
                     }}
                 />
             )}
