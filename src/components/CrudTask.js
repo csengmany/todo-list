@@ -2,36 +2,37 @@ const CrudTask = ({ task, setTask, taskList, setTaskList }) => {
     return (
         <div>
             {/* button check all */}
-            <button
-                onClick={() => {
-                    //if todolist is not empty
-                    if (taskList.length > 0) {
-                        //verify that at least one task is not checked
-                        const checkList = [];
-                        for (let i = 0; i < taskList.length; i++) {
-                            checkList.push(taskList[i].isChecked);
+            {taskList.length > 0 && (
+                <button
+                    onClick={() => {
+                        //if todolist is not empty
+                        if (taskList.length > 0) {
+                            //verify that at least one task is not checked
+                            const checkList = [];
+                            for (let i = 0; i < taskList.length; i++) {
+                                checkList.push(taskList[i].isChecked);
+                            }
+                            if (checkList.filter(Boolean).length > 0) {
+                                // check all task
+                                const newTask = [...taskList];
+                                newTask.map((item) => {
+                                    return (item.isChecked = false);
+                                });
+                                setTaskList(newTask);
+                            } else {
+                                //if all task is checked : uncheck all
+                                const newTask = [...taskList];
+                                newTask.map((item) => {
+                                    return (item.isChecked = true);
+                                });
+                                setTaskList(newTask);
+                            }
                         }
-                        if (checkList.filter(Boolean).length > 0) {
-                            // check all task
-                            const newTask = [...taskList];
-                            newTask.map((item) => {
-                                return (item.isChecked = false);
-                            });
-                            setTaskList(newTask);
-                        } else {
-                            //if all task is checked : uncheck all
-                            const newTask = [...taskList];
-                            newTask.map((item) => {
-                                return (item.isChecked = true);
-                            });
-                            setTaskList(newTask);
-                        }
-                    }
-                }}
-            >
-                Check all
-            </button>
-
+                    }}
+                >
+                    Check all
+                </button>
+            )}
             {/* input text */}
             <input
                 className="input-text"
@@ -43,7 +44,6 @@ const CrudTask = ({ task, setTask, taskList, setTaskList }) => {
                     setTask(event.target.value);
                 }}
             />
-
             {/* button add task */}
             <button
                 onClick={() => {
